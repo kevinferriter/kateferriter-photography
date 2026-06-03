@@ -3,23 +3,23 @@ import PageLayout from '../../../layouts/PageLayout.astro';
 import gallery from './gallery.json';
 ---
 
-<PageLayout metadata={{ title: "Urban Portraits" }}>
+<PageLayout metadata={{ title: 'Urban Portraits' }}>
   <section class="max-w-5xl mx-auto py-12">
     <h1 class="text-4xl font-semibold mb-6">Nature Study</h1>
-    <p class="text-lg mb-10 text-gray-600">
-      A collection of urban photographs exploring light, texture, and color.
-    </p>
+    <p class="text-lg mb-10 text-gray-600">A collection of urban photographs exploring light, texture, and color.</p>
 
     <!-- Image Grid -->
     <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6">
-      {gallery.map((image, index) => (
-        <img
-          src={image.src}
-          alt={image.alt}
-          class="rounded-xl shadow-md cursor-pointer hover:opacity-90 transition"
-          data-index={index}
-        />
-      ))}
+      {
+        gallery.map((image, index) => (
+          <img
+            src={image.src}
+            alt={image.alt}
+            class="rounded-xl shadow-md cursor-pointer hover:opacity-90 transition"
+            data-index={index}
+          />
+        ))
+      }
     </div>
   </section>
 

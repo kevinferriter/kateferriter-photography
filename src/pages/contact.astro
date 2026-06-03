@@ -2,13 +2,13 @@
 import PageLayout from '../layouts/PageLayout.astro';
 ---
 
-<PageLayout metadata={{ title: "Contact" }}>
+<PageLayout metadata={{ title: 'Contact' }}>
   <section class="max-w-3xl mx-auto py-12 prose">
     <h1>Contact</h1>
 
     <p>
-      I’d love to hear from you. Whether you’re interested in a project,
-      have a question, or just want to say hello, feel free to reach out.
+      I’d love to hear from you. Whether you’re interested in a project, have a question, or just want to say hello,
+      feel free to reach out.
     </p>
 
     <p>
@@ -16,42 +16,16 @@ import PageLayout from '../layouts/PageLayout.astro';
       <a href="mailto:kateferriter@gmail.com">kateferriter@gmail.com</a>
     </p>
 
-    <p>
-      Or send a message using the form below.
-    </p>
+    <p>Or send a message using the form below.</p>
 
-    <form
-      action="https://formspree.io/f/your-id"
-      method="POST"
-      class="space-y-4 mt-8"
-    >
-      <input
-        type="text"
-        name="name"
-        placeholder="Your Name"
-        class="w-full border rounded-lg p-3"
-        required
-      />
+    <form action="https://formspree.io/f/your-id" method="POST" class="space-y-4 mt-8">
+      <input type="text" name="name" placeholder="Your Name" class="w-full border rounded-lg p-3" required />
 
-      <input
-        type="email"
-        name="email"
-        placeholder="Your Email"
-        class="w-full border rounded-lg p-3"
-        required
-      />
+      <input type="email" name="email" placeholder="Your Email" class="w-full border rounded-lg p-3" required />
 
-      <textarea
-        name="message"
-        placeholder="Your Message"
-        class="w-full border rounded-lg p-3 h-32"
-        required
-      ></textarea>
+      <textarea name="message" placeholder="Your Message" class="w-full border rounded-lg p-3 h-32" required></textarea>
 
-      <button
-        type="submit"
-        class="bg-black text-white px-6 py-3 rounded-lg hover:bg-gray-800 transition"
-      >
+      <button type="submit" class="bg-black text-white px-6 py-3 rounded-lg hover:bg-gray-800 transition">
         Send Message
       </button>
     </form>
