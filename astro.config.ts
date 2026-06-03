@@ -68,9 +68,10 @@ export default defineConfig({
     }),
 
     astrowind({
-      config: './src/config.yaml',
-    }),
-  ],
+  config: './src/config.yaml',
+  site: 'https://kevinferriter.github.io/kateferriter-photography',
+  base: '/kateferriter-photography',
+}),
 
   image: {
     // Astro's default Sharp service handles local images.
