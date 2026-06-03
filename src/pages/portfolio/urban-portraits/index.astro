@@ -1,0 +1,53 @@
+---
+import PageLayout from '../../../layouts/PageLayout.astro';
+import gallery from './gallery.json';
+---
+
+<PageLayout title="Urban Portraits">
+  <section class="max-w-5xl mx-auto py-12">
+    <h1 class="text-4xl font-semibold mb-6">Nature Study</h1>
+    <p class="text-lg mb-10 text-gray-600">
+      A collection of urban photographs exploring light, texture, and color.
+    </p>
+
+    <!-- Image Grid -->
+    <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6">
+      {gallery.map((image, index) => (
+        <img
+          src={image.src}
+          alt={image.alt}
+          class="rounded-xl shadow-md cursor-pointer hover:opacity-90 transition"
+          data-index={index}
+        />
+      ))}
+    </div>
+  </section>
+
+  <!-- Lightbox Modal -->
+  <div id="lightbox" class="fixed inset-0 bg-black/80 hidden items-center justify-center z-50">
+    <img id="lightbox-img" class="max-h-[90%] max-w-[90%] rounded-xl shadow-lg" />
+  </div>
+
+  <script>
+    const images = document.querySelectorAll('[data-index]');
+    const lightbox = document.getElementById('lightbox');
+    const lightboxImg = document.getElementById('lightbox-img');
+
+    images.forEach((img) => {
+      img.addEventListener('click', () => {
+        lightboxImg.src = img.src;
+        lightbox.classList.remove('hidden');
+      });
+    });
+
+    lightbox.addEventListener('click', () => {
+      lightbox.classList.add('hidden');
+    });
+
+    document.addEventListener('keydown', (e) => {
+      if (e.key === 'Escape') {
+        lightbox.classList.add('hidden');
+      }
+    });
+  </script>
+</PageLayout>
