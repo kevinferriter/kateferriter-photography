@@ -25,6 +25,7 @@ const whenExternalScripts = (items: (() => AstroIntegration) | (() => AstroInteg
 
 export default defineConfig({
   site: 'https://kevinferriter.github.io/kateferriter-photography',
+  base: '/kateferriter-photography',
   output: 'static',
 
   integrations: [
@@ -67,11 +68,11 @@ export default defineConfig({
     }),
 
     astrowind({
-  config: './src/config.yaml',
-  site: 'https://kevinferriter.github.io/kateferriter-photography',
-  base: '/kateferriter-photography',
-}),
-
+      config: './src/config.yaml',
+      site: 'https://kevinferriter.github.io/kateferriter-photography',
+      base: '/kateferriter-photography',
+    }),
+  ]
   image: {
     // Astro's default Sharp service handles local images.
     //
