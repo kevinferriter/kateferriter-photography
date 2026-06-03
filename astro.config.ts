@@ -29,50 +29,51 @@ export default defineConfig({
   output: 'static',
 
   integrations: [
-    sitemap(),
-    mdx(),
-    icon({
-      include: {
-        tabler: ['*'],
-        'flat-color-icons': [
-          'template',
-          'gallery',
-          'approval',
-          'document',
-          'advertising',
-          'currency-exchange',
-          'voice-presentation',
-          'business-contact',
-          'database',
-        ],
+  sitemap(),
+  mdx(),
+  icon({
+    include: {
+      tabler: ['*'],
+      'flat-color-icons': [
+        'template',
+        'gallery',
+        'approval',
+        'document',
+        'advertising',
+        'currency-exchange',
+        'voice-presentation',
+        'business-contact',
+        'database',
+      ],
+    },
+  }),
+
+  ...whenExternalScripts(() =>
+    partytown({
+      config: { forward: ['dataLayer.push'] },
+    })
+  ),
+
+  compress({
+    CSS: true,
+    HTML: {
+      'html-minifier-terser': {
+        removeAttributeQuotes: false,
       },
-    }),
+    },
+    Image: false,
+    JavaScript: true,
+    SVG: false,
+    Logger: 1,
+  }),
 
-    ...whenExternalScripts(() =>
-      partytown({
-        config: { forward: ['dataLayer.push'] },
-      })
-    ),
+  astrowind({
+    config: './src/config.yaml',
+    site: 'https://kevinferriter.github.io/kateferriter-photography',
+    base: '/kateferriter-photography',
+  }),
+],
 
-    compress({
-      CSS: true,
-      HTML: {
-        'html-minifier-terser': {
-          removeAttributeQuotes: false,
-        },
-      },
-      Image: false,
-      JavaScript: true,
-      SVG: false,
-      Logger: 1,
-    }),
-
-    astrowind({
-      config: './src/config.yaml',
-      site: 'https://kevinferriter.github.io/kateferriter-photography',
-      base: '/kateferriter-photography',
-    }),
-  ]
   image: {
     // Astro's default Sharp service handles local images.
     //
