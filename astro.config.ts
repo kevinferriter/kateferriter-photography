@@ -27,6 +27,7 @@ export default defineConfig({
   site: "https://kevinferriter.github.io/kateferriterdotcom-photography-site/", // or your custom domain add letters
   output: "static",
   
+  // just another fake message to force an update
   integrations: [
     sitemap(),
     mdx(),
