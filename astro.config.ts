@@ -24,7 +24,7 @@ const whenExternalScripts = (items: (() => AstroIntegration) | (() => AstroInteg
   hasExternalScripts ? (Array.isArray(items) ? items.map((item) => item()) : [items()]) : [];
 
 export default defineConfig({
-  site: "https://kevinferriter.github.io/kateferriterdotcom-photography-site/", // or your custom domain
+  site: "https://kevinferriter.github.io/kateferriterdotcom-photography-site/", // or your custom domain add letters
   output: "static",
   
   integrations: [
