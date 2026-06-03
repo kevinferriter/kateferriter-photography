@@ -29,24 +29,26 @@ import gallery from './gallery.json';
 
   <script>
     const images = document.querySelectorAll('[data-index]');
-    const lightbox = document.getElementById('lightbox');
-    const lightboxImg = document.getElementById('lightbox-img');
-
-    images.forEach((img) => {
-      img.addEventListener('click', () => {
-        lightboxImg.src = img.src;
-        lightbox.classList.remove('hidden');
+    const lightbox = document.getElementById('lightbox') as HTMLElement | null;
+    const lightboxImg = document.getElementById('lightbox-img') as HTMLImageElement | null;
+    if (lightbox && lightboxImg) {
+      images.forEach((img) => {
+        const imageEl = img as HTMLImageElement;
+        imageEl.addEventListener('click', () => {
+          lightboxImg.src = imageEl.src;
+          lightbox.classList.remove('hidden');
+        });
       });
-    });
 
-    lightbox.addEventListener('click', () => {
-      lightbox.classList.add('hidden');
-    });
-
-    document.addEventListener('keydown', (e) => {
-      if (e.key === 'Escape') {
+      lightbox.addEventListener('click', () => {
         lightbox.classList.add('hidden');
-      }
-    });
+      });
+
+      document.addEventListener('keydown', (e) => {
+        if (e.key === 'Escape') {
+          lightbox.classList.add('hidden');
+        }
+      });
+    }
   </script>
 </PageLayout>
