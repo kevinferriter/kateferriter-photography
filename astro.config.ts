@@ -26,6 +26,7 @@ const whenExternalScripts = (items: (() => AstroIntegration) | (() => AstroInteg
 export default defineConfig({
   site: 'https://kevinferriter.github.io/kateferriter-photography',
   base: '/kateferriter-photography',
+  trailingSlash: 'never',
   output: 'static',
 
   integrations: [
@@ -69,8 +70,6 @@ export default defineConfig({
 
   astrowind({
     config: './src/config.yaml',
-    site: 'https://kevinferriter.github.io/kateferriter-photography',
-    base: '/kateferriter-photography',
   }),
 ],
 
