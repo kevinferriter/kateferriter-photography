@@ -26,8 +26,7 @@ const whenExternalScripts = (items: (() => AstroIntegration) | (() => AstroInteg
 export default defineConfig({
   site: "https://kevinferriter.github.io/kateferriterdotcom-photography-site/", // or your custom domain
   output: "static",
-  adapter: github(),
-
+  
   integrations: [
     sitemap(),
     mdx(),
