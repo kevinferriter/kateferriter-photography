@@ -25,7 +25,6 @@ const whenExternalScripts = (items: (() => AstroIntegration) | (() => AstroInteg
 
 export default defineConfig({
   site: 'https://kevinferriter.github.io/kateferriter-photography',
-  base: '/kateferriter-photography',
   trailingSlash: 'never',
   output: 'static',
 
